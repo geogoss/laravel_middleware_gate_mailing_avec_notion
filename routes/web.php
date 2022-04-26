@@ -27,4 +27,7 @@ require __DIR__.'/auth.php';
 
 Route::resource('/article', ArticleController::class);
 
+Route::get('/admin', function () {
+    return view('pages.admin');
+});
 

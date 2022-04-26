@@ -22,7 +22,7 @@ class ArticleFactory extends Factory
 
             'contenu' => $faker->realText($maxNbChars = 1000),
 
-            // 'user_id' => 1
+            'user_id' => 1
         ];
     }
 }
