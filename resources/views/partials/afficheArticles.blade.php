@@ -14,6 +14,7 @@
                 <a href="/article/{{ $article->id }}" class="text-white bg-green-700 mr-2 px-2 rounded">Lire
                     l'article</a>
                 
+                    @can('test', $article)
                     <a href="/article/{{ $article->id }}/edit" class="text-white bg-black mr-2 px-2 rounded">Modifier
                         l'article</a>
 
@@ -22,6 +23,8 @@
                         @method('DELETE')
                         <button class="text-white bg-red-700 px-2 rounded">Supprimer</button>
                     </form>
+                        
+                    @endcan
             </div>
         </div>
     @endforeach
