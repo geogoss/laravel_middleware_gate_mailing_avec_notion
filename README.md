@@ -48,7 +48,7 @@ Exercice laravel_middleware_1_part_5
 - Les rédacteurs peuvent accèder a toutes les pages saufe celle des users dans le backoffice
 - Les rédacteurs ne peuvent accéder a l'édit et l'update et le delete uniquement que des articles qu'ils ont eux même créez, ils ne peuvent pas edit/update/delete les articles des autres.
 
-                                                Middleware
+                                                Gate
 ======================================================================================================
 
 

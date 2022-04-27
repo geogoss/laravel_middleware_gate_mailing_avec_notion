@@ -58,7 +58,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view('pages.editRole', compact('role'));
     }
 
     /**
@@ -70,7 +70,9 @@ class RoleController extends Controller
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {
-        //
+        $role->role = $request->role;
+        $role->save();
+        return redirect()->back();
     }
 
     /**

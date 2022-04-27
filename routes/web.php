@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +29,13 @@ require __DIR__.'/auth.php';
 
 
 Route::resource('/article', ArticleController::class);
+Route::resource('/role', RoleController::class);
+
+Route::get('/user/{id}/edit', [UserController::class, 'edit']);
+Route::put('/user/{id}', [UserController::class, 'update']);
 
 Route::get('/admin', function () {
-    return view('pages.admin');
+    $users = User::all();
+    return view('pages.admin', compact('users'));
 })->middleware(['auth', 'admin']);
 
