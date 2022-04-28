@@ -1,6 +1,9 @@
 <section class="text-4xl text-center">
     <h1>future section pour afficher un tableau avec les users</h1>    
- 
+    <h1>Yes i can </h1>
+    <h2>Bienvenue sur la page admin</h2>
+
+
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -28,8 +31,9 @@
                                                 <div class="font-semibold text-left">Role</div>
                                             </th>
                                             <th class="p-2 whitespace-nowrap">
-                                                <div class="font-semibold text-left">Modifier le rôle</div>
+                                                <div class="font-semibold text-left">Action</div>
                                             </th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody class="text-sm divide-y divide-gray-100">
@@ -46,9 +50,20 @@
                                                 <td class="p-2 whitespace-nowrap">
                                                     <div class="text-left font-medium text-green-500">{{$user->role->role}}</div>
                                                 </td>
+                                                @can('admin', $user)
                                                 <td>
                                                     <a class="text-white bg-yellow-400 mr-2 px-2 rounded" href="/user/{{$user->id}}/edit ">Modifier</a>
                                                 </td>
+                                                <td>
+                                                    <form action="/delete/{{$user->id}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button
+                                                        class="text-white bg-red-700 px-2 rounded">Supprimer</button>
+
+                                                    </form>
+                                                </td>
+                                                @endcan
                                             </tr>
                                             
                                         @endforeach

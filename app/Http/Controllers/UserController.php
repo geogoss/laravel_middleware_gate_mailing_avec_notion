@@ -25,4 +25,10 @@ class UserController extends Controller
         return redirect()->back();
     }
 
+    public function destroy ($id) {
+        $delete = User::find($id);
+        $delete->delete();
+        return redirect()->back();
+    }
+
 }
