@@ -24,6 +24,20 @@ class UserSeeder extends Seeder
         'email' => 'admin@admin.com',
         'password' => bcrypt('admin@admin.com')],
 
+        ['name' => 'Negan',
+        'firstname' => 'walking',
+        'age' => '43',
+        'role_id' => 1,
+        'email' => 'negan@negan.com',
+        'password' => bcrypt('negan@negan.com')],
+
+        ['name' => 'Rick',
+        'firstname' => 'dead',
+        'age' => '39',
+        'role_id' => 1,
+        'email' => 'rick@rick.com',
+        'password' => bcrypt('rick@rick.com')],
+
         ['name' => 'Bouvier',
         'firstname' => 'Bastien',
         'age' => '30',

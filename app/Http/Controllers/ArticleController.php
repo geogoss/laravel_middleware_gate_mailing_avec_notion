@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -37,9 +38,11 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
+
         $article = new Article();
         $article->titre = $request->titre;
         $article->contenu = $request->contenu;
+        $article->user_id = Auth::user()->id;
         $article->save();
         return redirect('/article/create');
     }

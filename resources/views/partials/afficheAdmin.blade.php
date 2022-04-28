@@ -1,6 +1,7 @@
 <section class="text-4xl text-center">
     <h1>future section pour afficher un tableau avec les users</h1>    
-    
+ 
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h1 class="text-2xl font-bold text-center">All users</h1>
