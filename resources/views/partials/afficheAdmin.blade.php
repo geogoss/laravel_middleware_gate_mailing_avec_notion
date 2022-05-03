@@ -1,7 +1,7 @@
 <section class="text-4xl text-center">
-    <h1>future section pour afficher un tableau avec les users</h1>    
-    <h1>Yes i can </h1>
-    <h2>Bienvenue sur la page admin</h2>
+    
+<h1>Geoffrey</h1>
+<h1>Gosset</h1>
 
 
 
@@ -37,25 +37,25 @@
                                         </tr>
                                     </thead>
                                     <tbody class="text-sm divide-y divide-gray-100">
-                                        @foreach ($users as $user)
+                                        @foreach ($users as $item)
                                             <tr>
                                                 <td class="p-2 whitespace-nowrap">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium text-gray-800">{{$user->firstname}}</div>
+                                                        <div class="font-medium text-gray-800">{{$item->firstname}}</div>
                                                     </div>
                                                 </td>
                                                 <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left">{{$user->email}}</div>
+                                                    <div class="text-left">{{$item->email}}</div>
                                                 </td>
                                                 <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-medium text-green-500">{{$user->role->role}}</div>
+                                                    <div class="text-left font-medium text-green-500">{{$item->role->role}}</div>
                                                 </td>
-                                                @can('admin', $user)
+                                                @can('admin', $item)
                                                 <td>
-                                                    <a class="text-white bg-yellow-400 mr-2 px-2 rounded" href="/user/{{$user->id}}/edit ">Modifier</a>
+                                                    <a class="text-white bg-yellow-400 mr-2 px-2 rounded" href="/user/{{$item->id}}/edit ">Modifier</a>
                                                 </td>
                                                 <td>
-                                                    <form action="/delete/{{$user->id}}" method="POST">
+                                                    <form action="/delete/{{$item->id}}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button
